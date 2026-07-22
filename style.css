@@ -41,7 +41,7 @@ body {
     max-width: 450px; /* Prevents being too huge on laptop screens */
     height: auto; /* Maintains perfect aspect ratio without distortion */
     /* Gentle motion as requested initially */
-    animation: gentleSway 6s ease-in-out infinite alternate;
+    animation: gentleSway 7s ease-in-out infinite alternate;
 }
 
 .tl { top: 0; left: 0; }
@@ -58,7 +58,7 @@ body {
 
 @keyframes gentleSway {
     0% { transform: scale(1) rotate(0deg); }
-    100% { transform: scale(1.08) rotate(2deg); }
+    100% { transform: scale(1.05) rotate(1deg); }
 }
 
 /* Main Content Container */
