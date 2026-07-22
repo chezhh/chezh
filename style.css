@@ -67,7 +67,7 @@ body {
     z-index: 1;
     width: 100%;
     max-width: 270px; /* Exact match to the small button width */
-    padding: 60px 10px;
+    padding: 30px 10px 80px; /* Moved up by reducing top padding, added bottom padding */
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -75,7 +75,7 @@ body {
 
 /* Logo Animation & Styling */
 .header {
-    margin-bottom: 50px;
+    margin-bottom: 30px; /* Reduced gap between logo and buttons */
     text-align: center;
 }
 
@@ -103,7 +103,7 @@ body {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px; /* Reduced gap between buttons to save space */
 }
 
 /* Link Button Styling - Narrower exactly like the image */
@@ -117,7 +117,7 @@ body {
     grid-template-columns: 24px 1fr 20px;
     align-items: center;
     
-    padding: 14px 22px;
+    padding: 12px 20px; /* Reduced button padding slightly */
     border-radius: 50px;
     font-size: 1.05rem;
     font-weight: 400;
