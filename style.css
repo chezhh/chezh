@@ -22,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Illustrations Setup using prt.png */
+/* Background Illustrations Setup using pure SVG */
 .bg-container {
     position: absolute;
     top: 0;
@@ -32,17 +32,22 @@ body {
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
-    
-    /* Using the exact asset the user provided */
-    background-image: url('assets/prt.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
     opacity: 0.95;
+}
+
+.bg-corner {
+    position: absolute;
+    width: 50vw; /* Scales with screen width perfectly on mobile */
+    max-width: 450px; /* Prevents being too huge on laptop screens */
+    height: auto; /* Maintains perfect aspect ratio without distortion */
     /* Gentle motion as requested initially */
     animation: gentleSway 8s ease-in-out infinite alternate;
 }
+
+.tl { top: 0; left: 0; }
+.tr { top: 0; right: 0; animation-delay: 1s; }
+.bl { bottom: 0; left: 0; animation-delay: 2s; }
+.br { bottom: 0; right: 0; animation-delay: 3s; }
 
 /* If the PNG happens to have a white background, this blend mode ensures only the lines are visible */
 @supports (mix-blend-mode: screen) {
@@ -75,7 +80,7 @@ body {
 }
 
 .logo {
-    width: 130px;
+    width: 170px;
     height: auto;
     animation: elegantEntrance 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     opacity: 0;
@@ -141,13 +146,15 @@ body {
 
 /* Hover Effects */
 .link-item:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(234, 229, 217, 0.4);
     background-color: #ffffff;
+    letter-spacing: 0.5px;
 }
 
 .link-item:active {
-    transform: translateY(1px) scale(0.98);
+    transform: translateY(2px) scale(0.97);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Icon Styling - Exact matches for the thin line art */
@@ -155,12 +162,18 @@ body {
     font-size: 1.25rem;
     font-weight: 300;
     justify-self: start;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.link-item:hover .link-icon {
+    transform: scale(1.2) rotate(-8deg);
 }
 
 /* Text Styling - Perfectly aligned */
 .link-text {
     justify-self: start;
     margin-left: 8px;
+    transition: letter-spacing 0.4s ease;
 }
 
 /* Arrow Styling */
@@ -168,9 +181,9 @@ body {
     font-size: 1.05rem;
     font-weight: 300;
     justify-self: end;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .link-item:hover .link-arrow {
-    transform: translateX(4px);
+    transform: translateX(6px) scale(1.1);
 }
